@@ -417,7 +417,7 @@
                         <barButtonItem key="backBarButtonItem" title="  " id="dUm-My-pMB"/>
                         <barButtonItem key="rightBarButtonItem" title="닫기" id="Pdp-IS-xiL" userLabel="수정 완료">
                             <connections>
-                                <action selector="closedButtonTapped:" destination="Yu1-lM-nqp" id="gKQ-jp-Yy6"/>
+                                <action selector="updateFruitStockButtonTapped:" destination="Yu1-lM-nqp" id="7iM-jd-Vkz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

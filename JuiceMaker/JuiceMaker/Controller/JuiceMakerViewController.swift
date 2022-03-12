@@ -12,9 +12,9 @@ final class JuiceMakerViewController: UIViewController{
     let orderJuice = JuiceMaker()
     
     @IBAction private func changeViewControllerTapped(_ sender: Any) {
-        guard let ChangeStockViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChangeStockViewController") as? ChangeStockViewController else { return }
-        ChangeStockViewController.delegate = self
-        ChangeStockViewController.changedStock = fruitStore.fruits
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let ChangeStockViewController = storyboard.instantiateViewController(withIdentifier: "ChangeStockViewController") as? ChangeStockViewController else { return }
+        ChangeStockViewController.fruitsStore = fruitStore
         if let naviController = navigationController {
             naviController.pushViewController(ChangeStockViewController, animated: true)
         } else {
@@ -52,8 +52,9 @@ final class JuiceMakerViewController: UIViewController{
     private func showStockChangeAlertMessage() {
         let juiceOutOfStockAlert = UIAlertController(title: AlertMessages.outOfStock, message: "", preferredStyle: .alert)
         let yesButton = UIAlertAction(title: AlertMessages.ok, style: .default) {_ in
-            guard let ChangeStockViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChangeStockViewController") as? ChangeStockViewController else { return }
-            ChangeStockViewController.changedStock = self.fruitStore.fruits
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let ChangeStockViewController = storyboard.instantiateViewController(withIdentifier: "ChangeStockViewController") as? ChangeStockViewController else { return }
+            ChangeStockViewController.fruitsStore.fruits = self.fruitStore.fruits
             self.navigationController?.pushViewController(ChangeStockViewController, animated: true)
         }
         let noButton = UIAlertAction(title: AlertMessages.cancel, style: .destructive, handler: nil)
@@ -83,11 +84,8 @@ final class JuiceMakerViewController: UIViewController{
         super.viewDidLoad()
         initFruits()
     }
-}
     
-extension JuiceMakerViewController: ChangeStockViewControllerDelegate {
-    func sendData(stocks: [FruitsTypes : Int]) {
-        fruitStore.fruits = stocks
+    override func viewWillAppear(_ animated: Bool) {
         initFruits()
     }
 }
