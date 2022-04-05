@@ -7,15 +7,36 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var fruitStore = FruitStore()
+    var fruitInitStock = "10"
+    
+    @IBOutlet weak var strawberryStockLabel: UILabel!
+    @IBOutlet weak var bananaStockLabel: UILabel!
+    @IBOutlet weak var pineappleStockLabel: UILabel!
+    @IBOutlet weak var kiwiStockLabel: UILabel!
+    @IBOutlet weak var mangoStockLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        initFruits()
     }
     
     @IBAction func touchedChangeStockButton(_ sender: Any) {
         self.performSegue(withIdentifier: "showFruitsStockSegue", sender: self)
     }
     
+    @IBAction func touchedOrderJuiceButton(_ sender: UIButton) {
+    
+    }
+    
+    
+    func initFruits() {
+        strawberryStockLabel.text = fruitInitStock
+        bananaStockLabel.text = fruitInitStock
+        pineappleStockLabel.text = fruitInitStock
+        kiwiStockLabel.text = fruitInitStock
+        mangoStockLabel.text = fruitInitStock
+    }
     
     func showJuiceAlert() {
         let alert = UIAlertController(title: "성공", message: "쥬스 제조 후 쥬스 나왔습니다! 맛있게 드세요!", preferredStyle: .alert)
