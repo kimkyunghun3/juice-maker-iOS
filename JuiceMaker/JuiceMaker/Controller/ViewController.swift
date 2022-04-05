@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: "재고 부족!", message: "재료가 모자라요. 재고를 수정할까요?", preferredStyle: .alert)
         let noButton = UIAlertAction(title: "아니오", style: .default)
         let yesButton = UIAlertAction(title: "예", style: .default) { (action) in
-            // 다음 화면으로 전환
+            self.performSegue(withIdentifier: "showFruitsStockSegue", sender: self)
         }
         
         alert.addAction(yesButton)
