@@ -262,10 +262,10 @@
             </objects>
             <point key="canvasLocation" x="19.419642857142858" y="92.753623188405811"/>
         </scene>
-        <!--View Controller-->
+        <!--재고 추가-->
         <scene sceneID="fkG-vv-hpE">
             <objects>
-                <viewController id="Yu1-lM-nqp" sceneMemberID="viewController">
+                <viewController id="Yu1-lM-nqp" customClass="StockChangeViewController" customModule="JuiceMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tKV-4l-Vtc">
                         <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,6 +291,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZQk-f4-zrz">
                                                 <rect key="frame" x="0.0" y="120.66666666666669" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="fruitCountStepperPressed:" destination="Yu1-lM-nqp" eventType="valueChanged" id="71h-Hy-vct"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -312,6 +315,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="O5s-2N-3iP">
                                                 <rect key="frame" x="0.0" y="120.66666666666669" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="fruitCountStepperPressed:" destination="Yu1-lM-nqp" eventType="valueChanged" id="hqm-O5-dXf"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -333,6 +339,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Rcr-xr-eqz">
                                                 <rect key="frame" x="0.0" y="120.66666666666669" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="fruitCountStepperPressed:" destination="Yu1-lM-nqp" eventType="valueChanged" id="qyO-MS-fEI"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -354,6 +363,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="klA-59-Nu4">
                                                 <rect key="frame" x="0.0" y="120.66666666666669" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="fruitCountStepperPressed:" destination="Yu1-lM-nqp" eventType="valueChanged" id="paS-te-AoX"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -375,6 +387,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-6P-grO">
                                                 <rect key="frame" x="0.0" y="120.66666666666669" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="fruitCountStepperPressed:" destination="Yu1-lM-nqp" eventType="valueChanged" id="1cF-Mw-hUu"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -388,7 +403,25 @@
                             <constraint firstItem="sPE-uK-SCs" firstAttribute="centerY" secondItem="tKV-4l-Vtc" secondAttribute="centerY" id="y6H-r4-u2n"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="g4W-fY-l7r"/>
+                    <navigationItem key="navigationItem" title="재고 추가" id="g4W-fY-l7r" userLabel="재고 추가">
+                        <barButtonItem key="rightBarButtonItem" title="닫기" id="VsT-oP-A7l" userLabel="닫기">
+                            <connections>
+                                <action selector="fruitStockUpdateButtonTapped:" destination="Yu1-lM-nqp" id="y5O-rR-ct7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bananaLabel" destination="gKu-86-RhI" id="HdG-8m-htd"/>
+                        <outlet property="bananaStepper" destination="O5s-2N-3iP" id="6xr-uw-Br5"/>
+                        <outlet property="kiwiLabel" destination="ZDv-1m-HBY" id="vFW-nr-PEd"/>
+                        <outlet property="kiwiStepper" destination="klA-59-Nu4" id="P5f-fk-3oe"/>
+                        <outlet property="mangoLabel" destination="YJI-ER-LJR" id="lYe-rF-4Mb"/>
+                        <outlet property="mangoStepper" destination="xbn-6P-grO" id="z6z-xG-dR9"/>
+                        <outlet property="pineappleLabel" destination="MpT-VW-hCb" id="h1u-Db-a2C"/>
+                        <outlet property="pineappleStepper" destination="Rcr-xr-eqz" id="k7y-mA-SiL"/>
+                        <outlet property="strawberryLabel" destination="0yV-kn-zaT" id="wZp-QH-ToH"/>
+                        <outlet property="strawberryStepper" destination="ZQk-f4-zrz" id="OII-EE-Tij"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ieh-6D-g1l" sceneMemberID="firstResponder"/>
             </objects>

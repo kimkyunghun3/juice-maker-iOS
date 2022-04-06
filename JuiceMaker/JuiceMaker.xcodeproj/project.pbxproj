@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		642DEBE027FDA4CD00749D52 /* StockChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642DEBDF27FDA4CD00749D52 /* StockChangeViewController.swift */; };
 		64C4A9F727FC062D00248507 /* FruitTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C4A9F627FC062D00248507 /* FruitTypes.swift */; };
 		64C4A9F927FC066A00248507 /* JuiceTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C4A9F827FC066A00248507 /* JuiceTypes.swift */; };
 		64C4A9FB27FC0A7000248507 /* JuiceMakerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C4A9FA27FC0A7000248507 /* JuiceMakerError.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		642DEBDF27FDA4CD00749D52 /* StockChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockChangeViewController.swift; sourceTree = "<group>"; };
 		64C4A9F627FC062D00248507 /* FruitTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitTypes.swift; sourceTree = "<group>"; };
 		64C4A9F827FC066A00248507 /* JuiceTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceTypes.swift; sourceTree = "<group>"; };
 		64C4A9FA27FC0A7000248507 /* JuiceMakerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMakerError.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				C73DAF36255D0CDD00020D38 /* AppDelegate.swift */,
 				C73DAF38255D0CDD00020D38 /* SceneDelegate.swift */,
 				C73DAF3A255D0CDD00020D38 /* ViewController.swift */,
+				642DEBDF27FDA4CD00749D52 /* StockChangeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				C73DAF37255D0CDD00020D38 /* AppDelegate.swift in Sources */,
 				C73DAF39255D0CDD00020D38 /* SceneDelegate.swift in Sources */,
 				C73DAF4C255D0D0400020D38 /* JuiceMaker.swift in Sources */,
+				642DEBE027FDA4CD00749D52 /* StockChangeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
