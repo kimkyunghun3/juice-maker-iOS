@@ -11,8 +11,9 @@ class FruitStore {
     var fruits = [FruitTypes: Int]()
     
     init() {
-        for fruit in fruits {
-            fruits[fruit.key] = 10
+        let initCount = 10
+        for fruit in fruits.keys {
+            fruits[fruit] = initCount
         }
     }
     

@@ -5,6 +5,6 @@
 //  Created by Eddy on 2022/04/05.
 //
 
-enum FruitTypes {
-    case starwberry, banana, kiwi, pineapple, mango
+enum FruitTypes: Int {
+    case starwberry = 1, banana, kiwi, pineapple, mango
 }

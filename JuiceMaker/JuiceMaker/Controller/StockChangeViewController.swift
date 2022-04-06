@@ -28,7 +28,7 @@ class StockChangeViewController: UIViewController {
     }
     
     @IBAction func fruitStockUpdateButtonTapped(_ sender: UIBarButtonItem) {
-        
+        self.presentingViewController?.dismiss(animated: true)
     }
     
     func showFruitStock() {
@@ -50,9 +50,9 @@ class StockChangeViewController: UIViewController {
             case .mango:
                 strawberryLabel.text = String(fruitStore.fruits[.mango] ?? notFoundFruitStock)
                 strawberryStepper.value = Double(fruitStore.fruits[.mango] ?? notFoundFruitStock)
+            }
         }
     }
-}
     
     @IBAction func fruitCountStepperPressed(_ sender: UIStepper) throws {
         switch sender {

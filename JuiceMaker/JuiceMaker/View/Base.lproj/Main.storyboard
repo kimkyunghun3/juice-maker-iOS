@@ -406,7 +406,7 @@
                     <navigationItem key="navigationItem" title="재고 추가" id="g4W-fY-l7r" userLabel="재고 추가">
                         <barButtonItem key="rightBarButtonItem" title="닫기" id="VsT-oP-A7l" userLabel="닫기">
                             <connections>
-                                <action selector="fruitStockUpdateButtonTapped:" destination="Yu1-lM-nqp" id="y5O-rR-ct7"/>
+                                <action selector="fruitStockUpdateButtonTapped:" destination="Yu1-lM-nqp" id="AJh-Ti-YEH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
