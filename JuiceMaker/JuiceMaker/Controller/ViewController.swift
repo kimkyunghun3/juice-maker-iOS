@@ -36,62 +36,95 @@ class ViewController: UIViewController {
     @IBAction func touchedChangeStockButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "showFruitsStockSegue", sender: self)
     }
-    
     @IBAction func strawberryBananaJuiceOrderButton(_ sender: UIButton) {
-        clickButton(sender: sender)
+        orderJuice(sender: sender)
     }
     @IBAction func mangoKiwiJuiceOrderButton(_ sender: UIButton) {
-        clickButton(sender: sender)
+        orderJuice(sender: sender)
     }
     @IBAction func strawberryJuiceOrderButton(_ sender: UIButton) {
-        clickButton(sender: sender)
+        orderJuice(sender: sender)
     }
     @IBAction func bananaJuiceOrderButton(_ sender: UIButton) {
-        clickButton(sender: sender)
+        orderJuice(sender: sender)
     }
     @IBAction func pineappleJuiceOrderButton(_ sender: UIButton) {
-        clickButton(sender: sender)
+        orderJuice(sender: sender)
     }
     @IBAction func kiwiJuiceOrderButton(_ sender: UIButton) {
-        clickButton(sender: sender)
+        orderJuice(sender: sender)
     }
     @IBAction func mangoJuiceOrderButton(_ sender: UIButton) {
-        clickButton(sender: sender)
+        orderJuice(sender: sender)
     }
     
-    func clickButton(sender: UIButton) {
+    func orderJuice(sender: UIButton) {
         let defaultCount = 0
         switch sender {
         case orderedStrawberryBananaLabel:
             let fruitCount = orderJuice.makeJuice(juice: JuiceTypes.strawberryBananaJuice, fruitStore: fruitStore)
-            strawberryStockLabel.text = String(fruitCount[.strawberry] ?? defaultCount)
-            bananaStockLabel.text = String(fruitCount[.banana] ?? defaultCount)
+            if fruitCount.isEmpty {
+                showOutOfStockAlert()
+            } else {
+                strawberryStockLabel.text = String(fruitCount[.strawberry] ?? defaultCount)
+                bananaStockLabel.text = String(fruitCount[.banana] ?? defaultCount)
+                showJuiceAlert()
+            }
         case orderedMangoKiwiLabel:
             let fruitCount = orderJuice.makeJuice(juice: JuiceTypes.mangoKiwiJuice, fruitStore: fruitStore)
-            mangoStockLabel.text = String(fruitCount[.mango] ?? defaultCount)
-            kiwiStockLabel.text = String(fruitCount[.kiwi] ?? defaultCount)
+            if fruitCount.isEmpty {
+                showOutOfStockAlert()
+            } else {
+                mangoStockLabel.text = String(fruitCount[.mango] ?? defaultCount)
+                kiwiStockLabel.text = String(fruitCount[.kiwi] ?? defaultCount)
+                showJuiceAlert()
+            }
         case orderedStrawberryLabel:
             let fruitCount = orderJuice.makeJuice(juice: JuiceTypes.strawberryJuice, fruitStore: fruitStore)
-            strawberryStockLabel.text = String(fruitCount[.strawberry] ?? defaultCount)
+            if fruitCount.isEmpty {
+                showOutOfStockAlert()
+            } else {
+                strawberryStockLabel.text = String(fruitCount[.strawberry] ?? defaultCount)
+                showJuiceAlert()
+            }
         case orderedBananaLabel:
             let fruitCount = orderJuice.makeJuice(juice: JuiceTypes.bananaJuice, fruitStore: fruitStore)
-            bananaStockLabel.text = String(fruitCount[.banana] ?? defaultCount)
+            if fruitCount.isEmpty {
+                showOutOfStockAlert()
+            } else {
+                bananaStockLabel.text = String(fruitCount[.banana] ?? defaultCount)
+                showJuiceAlert()
+            }
         case orderedPineappleLabel:
             let fruitCount = orderJuice.makeJuice(juice: JuiceTypes.pineappleJuice, fruitStore: fruitStore)
-            pineappleStockLabel.text = String(fruitCount[.pineapple] ?? defaultCount)
+            if fruitCount.isEmpty {
+                showOutOfStockAlert()
+            } else {
+                pineappleStockLabel.text = String(fruitCount[.pineapple] ?? defaultCount)
+                showJuiceAlert()
+            }
         case orderedKiwiLabel:
             let fruitCount = orderJuice.makeJuice(juice: JuiceTypes.kiwiJuice, fruitStore: fruitStore)
-            kiwiStockLabel.text = String(fruitCount[.kiwi] ?? defaultCount)
+            if fruitCount.isEmpty {
+                showOutOfStockAlert()
+            } else {
+                kiwiStockLabel.text = String(fruitCount[.kiwi] ?? defaultCount)
+                showJuiceAlert()
+            }
         case orderedMangoLabel:
             let fruitCount = orderJuice.makeJuice(juice: JuiceTypes.mangoJuice, fruitStore: fruitStore)
-            mangoStockLabel.text = String(fruitCount[.mango] ?? defaultCount)
+            if fruitCount.isEmpty {
+                showOutOfStockAlert()
+            } else {
+                mangoStockLabel.text = String(fruitCount[.mango] ?? defaultCount)
+                showJuiceAlert()
+            }
         default:
             print(JuiceMakerError.unexpectedError)
         }
     }
     
     func initFruits() {
-
     }
     
     func showJuiceAlert() {
