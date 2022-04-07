@@ -13,7 +13,7 @@ enum JuiceTypes {
     func recipe() -> [FruitTypes:Int] {
         switch self {
         case .strawberryJuice:
-            return [FruitTypes.starwberry: 16]
+            return [FruitTypes.strawberry: 16]
         case .bananaJuice:
             return [FruitTypes.banana: 2]
         case .kiwiJuice:
@@ -21,7 +21,7 @@ enum JuiceTypes {
         case .pineappleJuice:
             return [FruitTypes.pineapple: 2]
         case .strawberryBananaJuice:
-            return [FruitTypes.starwberry: 10, FruitTypes.banana: 1]
+            return [FruitTypes.strawberry: 10, FruitTypes.banana: 1]
         case .mangoJuice:
             return [FruitTypes.mango: 3]
         case .mangoKiwiJuice:

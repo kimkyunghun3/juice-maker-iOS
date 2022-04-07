@@ -37,12 +37,34 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "showFruitsStockSegue", sender: self)
     }
     
-    @IBAction func orderJuiceButtonTapped(_ sender: UIButton) throws {
+    @IBAction func strawberryBananaJuiceOrderButton(_ sender: UIButton) {
+        clickButton(sender: sender)
+    }
+    @IBAction func mangoKiwiJuiceOrderButton(_ sender: UIButton) {
+        clickButton(sender: sender)
+    }
+    @IBAction func strawberryJuiceOrderButton(_ sender: UIButton) {
+        clickButton(sender: sender)
+    }
+    @IBAction func bananaJuiceOrderButton(_ sender: UIButton) {
+        clickButton(sender: sender)
+    }
+    @IBAction func pineappleJuiceOrderButton(_ sender: UIButton) {
+        clickButton(sender: sender)
+    }
+    @IBAction func kiwiJuiceOrderButton(_ sender: UIButton) {
+        clickButton(sender: sender)
+    }
+    @IBAction func mangoJuiceOrderButton(_ sender: UIButton) {
+        clickButton(sender: sender)
+    }
+    
+    func clickButton(sender: UIButton) {
         let defaultCount = 0
         switch sender {
         case orderedStrawberryBananaLabel:
             let fruitCount = orderJuice.makeJuice(juice: JuiceTypes.strawberryBananaJuice, fruitStore: fruitStore)
-            strawberryStockLabel.text = String(fruitCount[.starwberry] ?? defaultCount)
+            strawberryStockLabel.text = String(fruitCount[.strawberry] ?? defaultCount)
             bananaStockLabel.text = String(fruitCount[.banana] ?? defaultCount)
         case orderedMangoKiwiLabel:
             let fruitCount = orderJuice.makeJuice(juice: JuiceTypes.mangoKiwiJuice, fruitStore: fruitStore)
@@ -50,7 +72,7 @@ class ViewController: UIViewController {
             kiwiStockLabel.text = String(fruitCount[.kiwi] ?? defaultCount)
         case orderedStrawberryLabel:
             let fruitCount = orderJuice.makeJuice(juice: JuiceTypes.strawberryJuice, fruitStore: fruitStore)
-            strawberryStockLabel.text = String(fruitCount[.starwberry] ?? defaultCount)
+            strawberryStockLabel.text = String(fruitCount[.strawberry] ?? defaultCount)
         case orderedBananaLabel:
             let fruitCount = orderJuice.makeJuice(juice: JuiceTypes.bananaJuice, fruitStore: fruitStore)
             bananaStockLabel.text = String(fruitCount[.banana] ?? defaultCount)
@@ -64,11 +86,12 @@ class ViewController: UIViewController {
             let fruitCount = orderJuice.makeJuice(juice: JuiceTypes.mangoJuice, fruitStore: fruitStore)
             mangoStockLabel.text = String(fruitCount[.mango] ?? defaultCount)
         default:
-            throw JuiceMakerError.unexpectedError
+            print(JuiceMakerError.unexpectedError)
         }
     }
     
     func initFruits() {
+
     }
     
     func showJuiceAlert() {

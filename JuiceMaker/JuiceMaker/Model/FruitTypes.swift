@@ -5,6 +5,6 @@
 //  Created by Eddy on 2022/04/05.
 //
 
-enum FruitTypes: Int {
-    case starwberry = 1, banana, kiwi, pineapple, mango
+enum FruitTypes: CaseIterable {
+    case strawberry, banana, kiwi, pineapple, mango
 }

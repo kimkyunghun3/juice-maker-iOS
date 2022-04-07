@@ -35,29 +35,29 @@ class StockChangeViewController: UIViewController {
         let notFoundFruitStock = 0
         for fruit in fruitStore.fruits.keys {
             switch fruit {
-            case .starwberry:
-                strawberryLabel.text = String(fruitStore.fruits[.starwberry] ?? notFoundFruitStock)
-                strawberryStepper.value = Double(fruitStore.fruits[.starwberry] ?? notFoundFruitStock)
+            case .strawberry:
+                strawberryLabel.text = String(fruitStore.fruits[.strawberry] ?? notFoundFruitStock)
+                strawberryStepper.value = Double(fruitStore.fruits[.strawberry] ?? notFoundFruitStock)
             case .banana:
                 bananaLabel.text = String(fruitStore.fruits[.banana] ?? notFoundFruitStock)
-                strawberryStepper.value = Double(fruitStore.fruits[.banana] ?? notFoundFruitStock)
+                bananaStepper.value = Double(fruitStore.fruits[.banana] ?? notFoundFruitStock)
             case .pineapple:
-                strawberryLabel.text = String(fruitStore.fruits[.pineapple] ?? notFoundFruitStock)
-                strawberryStepper.value = Double(fruitStore.fruits[.pineapple] ?? notFoundFruitStock)
+                pineappleLabel.text = String(fruitStore.fruits[.pineapple] ?? notFoundFruitStock)
+                pineappleStepper.value = Double(fruitStore.fruits[.pineapple] ?? notFoundFruitStock)
             case .kiwi:
-                strawberryLabel.text = String(fruitStore.fruits[.kiwi] ?? notFoundFruitStock)
-                strawberryStepper.value = Double(fruitStore.fruits[.kiwi] ?? notFoundFruitStock)
+                kiwiLabel.text = String(fruitStore.fruits[.kiwi] ?? notFoundFruitStock)
+                kiwiStepper.value = Double(fruitStore.fruits[.kiwi] ?? notFoundFruitStock)
             case .mango:
-                strawberryLabel.text = String(fruitStore.fruits[.mango] ?? notFoundFruitStock)
-                strawberryStepper.value = Double(fruitStore.fruits[.mango] ?? notFoundFruitStock)
+                mangoLabel.text = String(fruitStore.fruits[.mango] ?? notFoundFruitStock)
+                mangoStepper.value = Double(fruitStore.fruits[.mango] ?? notFoundFruitStock)
             }
         }
     }
     
-    @IBAction func fruitCountStepperPressed(_ sender: UIStepper) throws {
+    @IBAction func fruitCountStepperPressed(_ sender: UIStepper) {
         switch sender {
         case strawberryStepper:
-            fruitStore.fruits[.starwberry] = Int(sender.value)
+            fruitStore.fruits[.strawberry] = Int(sender.value)
             strawberryLabel.text = String(Int(sender.value))
         case bananaStepper:
             fruitStore.fruits[.banana] = Int(sender.value)
@@ -72,7 +72,7 @@ class StockChangeViewController: UIViewController {
             fruitStore.fruits[.mango] = Int(sender.value)
             mangoLabel.text = String(Int(sender.value))
         default:
-            throw JuiceMakerError.unexpectedError
+            print(JuiceMakerError.unexpectedError)
         }
     }
 }

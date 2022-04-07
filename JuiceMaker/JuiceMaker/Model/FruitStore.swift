@@ -12,7 +12,7 @@ class FruitStore {
     
     init() {
         let initCount = 10
-        for fruit in fruits.keys {
+        for fruit in FruitTypes.allCases {
             fruits[fruit] = initCount
         }
     }
